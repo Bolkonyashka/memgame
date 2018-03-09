@@ -13,17 +13,17 @@
             <a href="#game-window" data-toggle="pill" class="btn btn-primary marg-top start-button" (click)="gameStart()" data-tid="NewGame-startGame">Начать игру</a>
           </div>
       </div>
-      <div id="game-window" class="col-md-12 text-center marg-top tab-pane fade" [ngClass]="{active: !gameMod.gameFinished}" data-tid="Deck">
+      <div id="game-window" class="col-md-12 col-sm-12 text-center marg-top tab-pane fade" [ngClass]="{active: !gameMod.gameFinished}" data-tid="Deck">
           <div class="row">
-            <div class="col-md-6 text-left">
-            <button class="btn btn-primary restart-button text-left" (click)="gameRestart()" data-tid="Menu-newGame">Начать заново</button>
-          </div>
-          <div class="col-md-6 text-right" data-tid="Menu-scores">
+            <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+              <button class="btn btn-primary restart-button text-left" (click)="gameRestart()" data-tid="Menu-newGame">Начать заново</button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 text-right" data-tid="Menu-scores">
               <h2>Очки {{gameMod.gameScore}}</h2>
             </div>
           </div>
-          <div class="row marg-top">
-            <div *ngFor="let card of cards" class="col-md-2 game-card marg-top">
+          <div class="col-xs-12 marg-top card-container text-center">
+            <div *ngFor="let card of cards" class="col-md-2 col-sm-2 col-xs-2 game-card marg-top">
                 <!--<a (click)="cardClick()"><img class="game-card-img" src={{card.cardImg}}></a>this.classList.toggle('clicked');!-->
                 <div id={{card.cardID}} class="flip-container" (click)="cardClick(card.cardID)" [ngClass]="{clicked: card.cardHidden}">
                     <div class="flipper" *ngIf="!card.isSolved">
