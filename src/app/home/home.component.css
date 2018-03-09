@@ -29,6 +29,7 @@ h1 {
 .restart-button:hover {
     color: gainsboro;
     background-color: rgb(27, 109, 46);
+    border: 0pt;
 }
 h2 {
     color: white;
@@ -66,4 +67,10 @@ z-index: 2;
 }
 .back {
 transform: rotateY(180deg);
+}
+button:active, button:focus {
+outline: none !important
+}
+button::-moz-focus-inner {
+border: 0 !important
 }
