@@ -1,0 +1,42 @@
+<div>
+  <div class="tab-content">
+      <!--<app-start-window id="start-window" class="tab-pane fade in active"></app-start-window>        
+      <app-game-window id="game-window" class="tab-pane fade"></app-game-window>!-->
+      <div class="col-md-12 text-center vert-center tab-pane fade in active" id="start-window">
+          <div class="game-img">
+            <img src="../../../assets/StartGame.png">
+          </div>
+          <div class="game-interface">
+            <h1 class="marg-top">
+              MEMORY GAME
+            </h1>
+            <a href="#game-window" data-toggle="pill" class="btn btn-primary marg-top start-button" (click)="gameStart()">Начать игру</a>
+          </div>
+      </div>
+      <div id="game-window"  class="col-md-12 text-center marg-top tab-pane fade">
+          <div class="row">
+            <div class="col-md-6 text-left">
+            <button class="btn btn-primary restart-button text-left">Начать заново</button>
+          </div>
+          <div class="col-md-6 text-right">
+              <h2>Очки</h2>
+            </div>
+          </div>
+          <div class="row marg-top">
+            <div *ngFor="let card of cards" id="{{card.cardValue}}" class="col-md-2 game-card marg-top">
+                <!--<a (click)="cardClick()"><img class="game-card-img" src={{card.cardImg}}></a>!-->
+                <div class="flip-container" onclick="this.classList.toggle('clicked');cardClick()">
+                    <div class="flipper">
+                      <div class="front">
+                          <img class="game-card-img" src={{card.cardImg}}>
+                      </div>
+                      <div class="back">
+                          <img class="game-card-img" src="../../../assets/Cards/back.png">
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
