@@ -1,11 +1,17 @@
+h1 {
+    color: whitesmoke;
+}
+h2 {
+    color: white;
+}
 .marg-top {
     margin-top: 25px;
 }
 .marg-bot {
     margin-bottom: 15px;
 }
-h1 {
-    color: whitesmoke;
+.vert-center {
+    margin-top: 20%;
 }
 .start-button {
     font-size: 14pt;
@@ -16,65 +22,54 @@ h1 {
 .start-button:hover {
     background-color: gainsboro;
 }
-.vert-center {
-    margin-top: 20%;
-}
 .restart-button {
     background-color: rgb(27, 109, 46);
     margin-top: 12px;
     margin-bottom: 10px;
     border: 0pt;
     font-size: 30px;
+    padding-left: 0;
 }
 .restart-button:hover {
     color: gainsboro;
     background-color: rgb(27, 109, 46);
     border: 0pt;
 }
-h2 {
-    color: white;
-}
 .game-card-img {
     width: 100%;
 }
 .flip-container {
     perspective: 1000;
-}
-    
+}   
 .flip-container.clicked .flipper {
-transform: rotateY(180deg);
-}
-    
+    transform: rotateY(180deg);
+}  
 .flip-container, .front, .back {
-width: 100%;
-height: 230px;
+    width: 100%;
+    height: 230px;
 }
 .flipper {
-transition: 0.6s;
-transform-style: preserve-3d;
-    
-position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;   
+    position: relative;
 }
 .front, .back {
-backface-visibility: hidden;
-position: absolute;
-top: 0;
-left: 0;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .front {
-z-index: 2;
+    z-index: 2;
 }
 .back {
-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 button:active, button:focus {
-outline: none !important
+    outline: none !important
 }
 button::-moz-focus-inner {
-border: 0 !important
-}
-.no-margin {
-    margin: 0 !important
+    border: 0 !important
 }
 @media (max-width: 1199px) {
 .flip-container, .front, .back {
@@ -93,16 +88,21 @@ border: 0 !important
 }
 }
 @media (max-width: 767px) {
-.flip-container, .front, .back {
-    margin: 0 !important;
-    height: 137px;
+.marg-top {
+    margin-top: 5px;
 }
 .game-card {
     padding-left: 10px;
     padding-right: 10px;
 }
-.marg-top {
-    margin-top: 5px;
+.game-score {
+    font-size: 20px;
+}
+.restart-button {
+    font-size: 20px;
+}
+.flip-container, .front, .back {
+    height: 137px;
 }
 }
 @media (max-width: 620px) {
@@ -111,16 +111,31 @@ border: 0 !important
 }
 }
 @media (max-width: 540px) {
-.flip-container, .front, .back {
-    height: 97px;
+.game-img {
+    width: 90%;
 }
 .game-card {
     padding-left: 5px;
     padding-right: 5px;
 }
+.flip-container, .front, .back {
+    height: 97px;
+}
+}
 @media (max-width: 460px) {
+.game-score {
+    font-size: 15px;
+}
+.restart-button {
+    font-size: 15px;
+}
 .flip-container, .front, .back {
     height: 79px;
 }
 }
+@media (max-width: 380px) {
+.flip-container, .front, .back {
+    height: 61px;
 }
+}
+

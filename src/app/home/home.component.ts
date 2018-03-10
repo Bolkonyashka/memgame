@@ -79,8 +79,8 @@ export class HomeComponent implements OnInit {
 
   scoreCounter() {
     if (this.gameMod.openCardFirst.cardValue === this.gameMod.openCardSecond.cardValue) {    
-      this.gameMod.gameScore += 42 * this.gameMod.unsolvedPairs;
       this.gameMod.unsolvedPairs -= 1;
+      this.gameMod.gameScore += 42 * this.gameMod.unsolvedPairs;
       setTimeout(this.cardsSolved, 1500, this.gameMod);
     } else {
       if (this.gameMod.gameScore <= 42 * (9 - this.gameMod.unsolvedPairs)) {
@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit {
       }
       setTimeout(this.cardsHide, 1500, this.gameMod);
     } 
-    if (this.gameMod.unsolvedPairs === 0) {
+    if (this.gameMod.unsolvedPairs === 0) {//game end
       setTimeout(this.gameFinish, 2000, this.gameMod);
     }
   }
