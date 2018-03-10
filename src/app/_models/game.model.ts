@@ -7,5 +7,6 @@ export class GameModel{
     openCardNum: number = 0;
     openCardFirst: GameCard;
     openCardSecond: GameCard;
+    gameStarted: boolean = false;
     gameFinished: boolean = false;
   }

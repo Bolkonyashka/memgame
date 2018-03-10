@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   gameStart() {
+    this.gameMod.gameStarted = true;
     setTimeout(this.cardsReverse, 1000, this.cards, this.gameMod, false);
     setTimeout(this.cardsReverse, 6000, this.cards, this.gameMod, true);
   }
@@ -96,6 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
   gameFinish(gameMod: GameModel) {
+    gameMod.gameStarted = false;
     gameMod.gameFinished = true;
   }
   

@@ -13,4 +13,12 @@ export class GameCard{
       this.cardID = cID;
       this.testID = tid;
     }
+
+    getTestAttrValue() {
+      if (this.cardHidden) {
+        return("Card-flipped");
+      } else {
+        return("Card");
+      }
+    }
   }

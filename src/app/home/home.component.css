@@ -11,7 +11,14 @@ h2 {
     margin-bottom: 15px;
 }
 .vert-center {
-    margin-top: 20%;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+.game-img {
+    height: 30vh;
+}
+.game-interface {
+    height: 20vh;
 }
 .start-button {
     font-size: 14pt;
@@ -39,7 +46,7 @@ h2 {
     width: 100%;
 }
 .flip-container {
-    perspective: 1000;
+    perspective: 1000px;
 }   
 .flip-container.clicked .flipper {
     transform: rotateY(180deg);
@@ -58,6 +65,7 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
+    transform: rotateX(0deg);
 }
 .front {
     z-index: 2;
@@ -109,11 +117,12 @@ button::-moz-focus-inner {
 .flip-container, .front, .back {
     height: 103px;
 }
+.game-img {
+    width: 90vw;
+    height: auto;
+}
 }
 @media (max-width: 540px) {
-.game-img {
-    width: 90%;
-}
 .game-card {
     padding-left: 5px;
     padding-right: 5px;
