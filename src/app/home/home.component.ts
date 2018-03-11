@@ -79,11 +79,7 @@ export class HomeComponent implements OnInit {
       this.gameMod.gameScore += 42 * this.gameMod.unsolvedPairs;
       setTimeout(this.cardsSolved, 1500, this.gameMod);
     } else {
-      if (this.gameMod.gameScore <= 42 * (9 - this.gameMod.unsolvedPairs)) {
-        this.gameMod.gameScore = 0;
-      } else {
-        this.gameMod.gameScore -= 42 * (9 - this.gameMod.unsolvedPairs);
-      }
+      this.gameMod.gameScore -= 42 * (9 - this.gameMod.unsolvedPairs);
       setTimeout(this.cardsHide, 1500, this.gameMod);
     } 
     if (this.gameMod.unsolvedPairs === 0) {
