@@ -26,9 +26,9 @@ export class HomeComponent implements OnInit {
       var randomCard = fullPool[Math.floor(Math.random() * fullPool.length)];
       if (randomPool.indexOf(randomCard) === -1) {
         randomPool.push(randomCard);
-        var card = new GameCard(randomCard, "../../../assets/Cards/" + randomCard + ".png", true ,"1" + randomCard, "Card-flipped");
+        var card = new GameCard(randomCard, "../../../assets/Cards/" + randomCard + ".png", true ,"1" + randomCard);
         this.cards.push(card);
-        var card = new GameCard(randomCard, "../../../assets/Cards/" + randomCard + ".png", true ,"2" + randomCard, "Card-flipped");
+        var card = new GameCard(randomCard, "../../../assets/Cards/" + randomCard + ".png", true ,"2" + randomCard);
         this.cards.push(card);
        }
     }
@@ -45,11 +45,6 @@ export class HomeComponent implements OnInit {
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
       card.cardHidden = !card.cardHidden;
-      if (card.cardHidden) {
-        card.testID = "Card-flipped";
-      } else {
-        card.testID = "Card";
-      }
     }
     gameMod.gameReady = readyStat;
   }
@@ -57,12 +52,12 @@ export class HomeComponent implements OnInit {
   cardClick(cID: string) {
     if (this.gameMod.gameReady === true && (this.gameMod.openCardNum === 0 || (this.gameMod.openCardNum === 1 &&  cID != this.gameMod.openCardFirst.cardID))) {
       this.gameMod.gameReady = false;
-      var card = new GameCard("", "", true, "", "");
+      var card = new GameCard("", "", true, "");
       for (var i = 0; i < this.cards.length; i++) {
         if (this.cards[i].cardID === cID) {
           card = this.cards[i];
           card.cardHidden = false;
-          card.testID = "Card";
+          break;
         }
       }
       this.gameMod.openCardNum += 1;
@@ -91,7 +86,7 @@ export class HomeComponent implements OnInit {
       }
       setTimeout(this.cardsHide, 1500, this.gameMod);
     } 
-    if (this.gameMod.unsolvedPairs === 0) {//game end
+    if (this.gameMod.unsolvedPairs === 0) {
       setTimeout(this.gameFinish, 2000, this.gameMod);
     }
   }
@@ -103,9 +98,7 @@ export class HomeComponent implements OnInit {
   
   cardsHide(gameMod: GameModel) {
     gameMod.openCardFirst.cardHidden = true;
-    gameMod.openCardFirst.testID = "Card-flipped";
     gameMod.openCardSecond.cardHidden = true;
-    gameMod.openCardSecond.testID = "Card-flipped";
     gameMod.gameReady = true;
   }
 
@@ -121,5 +114,4 @@ export class HomeComponent implements OnInit {
     this.gameMod = new GameModel();
     this.gameStart();
   }
-
 }

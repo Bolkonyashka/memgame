@@ -45,6 +45,22 @@ h2 {
 .game-card-img {
     width: 100%;
 }
+.game-score {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
+    display: inline-block;
+    text-align: right;
+}
+.game-score-label {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
+    display: inline-block;
+    text-align: right;
+}
 .flip-container {
     perspective: 1000px;
 }   
@@ -106,6 +122,9 @@ button::-moz-focus-inner {
 .game-score {
     font-size: 20px;
 }
+.game-score-label {
+    font-size: 20px;
+}
 .restart-button {
     font-size: 20px;
 }
@@ -133,6 +152,9 @@ button::-moz-focus-inner {
 }
 @media (max-width: 460px) {
 .game-score {
+    font-size: 15px;
+}
+.game-score-label {
     font-size: 15px;
 }
 .restart-button {
